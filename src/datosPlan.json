@@ -1,0 +1,14 @@
+{
+    "planes": [
+        {
+            "name": "Plan prepago",
+            "description": "Navegacion 2GB",
+            "Precio": "50$"
+        },
+        {
+            "name": "Plan movil",
+            "description": "Navegacion 5GB, llamados ilimitados",
+            "Precio": "440$"
+        }
+    ]
+}

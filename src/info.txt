@@ -21,3 +21,10 @@ ARCHIVOS DE REACT
  - package.json -> nombre de pry, version, dependencias
  - package-lock.json -> automatico
 
+
+***************************************************************************************************
+
+CONCEPTO DE ESTADO
+
+React no almacena información. La obtiene desde un backend.
+Al traerla, debe guardarse en algún lado -> esto se conoce como ESTADO
