@@ -1,0 +1,23 @@
+REACT es una biblioteca de JavaScript para interfaces de usuario
+ - Lenguajes que utiliza: HTML, CSS, JavaScript
+ - Ejemplo de uso: facebook, instagram
+
+OBJETIVO PRINCIPAL: SPA (single page application)
+App web de página única. El codigo HTML, CSS, JS se carga por única vez.
+Luego, se carga en forma dinámica de acuerdo lo requiera la app (respuesta a acciones de usuarios)
+De esta forma, no se renderiza continuamente. La experiencia es más fluida.
+//Lo que evita -> continuas idas y vueltas con el server con todo el código HTML,CSS,JS
+
+Para esto, REACT copia el DOM del navegador en memoria y la compara contra la configuración actual.
+Luego de comparar, realiza cambios diferenciales.
+
+***************************************************************************************************
+
+ARCHIVOS DE REACT
+
+ - index.js -> índice del proyecto, o main
+ - index.css -> estilo de navegacion PRINCIPAL
+ //ver en uigradientes.com distintas gradientes para el background
+ - package.json -> nombre de pry, version, dependencias
+ - package-lock.json -> automatico
+
