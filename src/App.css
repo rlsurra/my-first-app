@@ -4,6 +4,7 @@
 .logo{float:left;margin:0 0 0 40px; padding:0px;font-family: 'Source Sans Pro', sans-serif; font-size:45px; color:#505050;}
 .logo a{color:#fff;}
 .logo span{ font-size:14px; color:#FFFFFF;}
+.logo label{ color: white;}
 
 /* Menu */
 .menu{float:right;margin:0 0 0 0px; padding:0px}
@@ -12,8 +13,14 @@
 .menu ul li a{font-family: 'Source Sans Pro', sans-serif;color:#fff; font-size:16px;}
 .menu ul li.selected a{color:#000;}
 .menu ul li a:hover{color:#000;}
+.menu label{ color: white;}
 
-#slogan{width:100%; height:60px;margin:auto;padding:0 0 40px 0;}
-.top_slogan{text-align:center;font-family: 'Source Sans Pro', sans-serif; color:#CCCCCC; font-size:30px; padding:50px 150px; font-style:italic; line-height:40px;}
+#slogan{width:100%; height:60px;margin:auto;padding:0 0 20px 0;}
+.top_slogan{text-align:center;font-family: 'Source Sans Pro', sans-serif; color:#CCCCCC; font-size:30px; padding:30px 150px; font-style:italic; line-height:35px;}
 
+/* GRILLA */
+#grilla
+.col-5{width:60%;}
+.row{ width:90%;margin:auto;background-color:#ecf1ec;}
+.row-info{margin:20px;}
 
