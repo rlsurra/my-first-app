@@ -11,24 +11,26 @@ class App extends Component {
     super(props);
 
     this.state = {
-      productos: [], suscripcion: ''
+      inventoryProducts: [],
+      inputValue: ''
     };
 
-    this.handleSearchButton = this.handleSearchButton.bind(this);
+    this.handleSearchProductInventory = this.handleSearchProductInventory.bind(this);
+    this.handleChangeOfContactValue = this.handleChangeOfContactValue.bind(this);
 }
 
-  handleSearchButton() {
+  handleChangeOfContactValue(event){
+    this.setState({inputValue: event.target.value});
+  }
 
-      fetch('/1169557094')
-      //fetch('http://jsonplaceholder.typicode.com/users')
-      .then(res => res.json())
-      .then((data) => {
-        this.setState({ productos: data })
-      })
-      .catch(function(error) {
-        alert("La API productInventory no esta funcionando. Por favor, contactar al administrador")
-      }
-      )
+  handleSearchProductInventory() {
+
+    fetch('/contact/' + this.state.inputValue)
+    //fetch('http://jsonplaceholder.typicode.com/users')
+    .then(res => res.json())
+    .then(data => this.setState({ inventoryProducts: data }))
+    .catch(function(error) { console.log('Hubo un error. Por favor, enviar el codigo al administrador\n'+error) })
+
   }
 
   //Pinta la pantalla
@@ -69,21 +71,21 @@ class App extends Component {
               <div class="col-5">
                 <label for="filtro">Elija el filtro de busqueda <span>*</span> </label>
                 <div class="desplegable">
-                  <select name="filtro" class="form-control">
+                  <select name="filtro" class="form-control" required>
                     <option disabled="disabled" selected="selected">Elija una opcion</option>
-                    <option value="1">Recurso primario</option>
+                    <option value="1">Nro contacto</option>
                   </select>
                 </div>
               </div>
 
               <div class="col-5">
                 <label for="valor">Valor <span>*</span></label>
-                <input type="text" class="form-control" required />
+                <input type="text" value={this.state.inputValue} onChange={this.handleChangeOfContactValue} class="form-control" required />
               </div>
 
               <div class="col-2 mb-3">
                 <br></br>
-                <button id="buscar" type="button" class="btn btn-primary float-right" onClick={this.handleSearchButton}> BUSCAR </button>
+                <button id="buscar" type="button" class="btn btn-primary float-right" onClick={this.handleSearchProductInventory}> BUSCAR </button>
 
               </div>
 
@@ -92,8 +94,8 @@ class App extends Component {
           
         </div>
 
-        <Productos productos={this.state.productos} />
- 
+        <Productos productos={this.state.inventoryProducts} />
+
         </div>
     );
   }

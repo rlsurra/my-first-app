@@ -1,5 +1,5 @@
 import React from 'react'
-import './Producto.css';
+import './Producto.css'
 
 const Productos = ({ productos }) => {
     return (
@@ -7,9 +7,9 @@ const Productos = ({ productos }) => {
         {productos.map((prod) => (
         <div class="card">
             <div class="card-body">
-                <h5 id="tipo-prod" class="card-title">{prod.productType}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{prod.name}</h6>
-                <p class="card-text">{prod.productOffering.description}</p>
+                <h5 id="tipo-prod" class="card-title">{prod.name}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{prod.productType}</h6>
+                <p class="card-text">{prod.publicId}</p>
             </div>
         </div>
         ))}
