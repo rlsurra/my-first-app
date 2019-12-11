@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './CSS/App.css';
 import Productos from '././Productos.js'
 
 class App extends Component {
@@ -12,26 +12,38 @@ class App extends Component {
 
     this.state = {
       inventoryProducts: [],
-      inputValue: ''
+      inputContactId: '',
+      filtroBusqueda: ''
     };
 
+
+    this.handleChangeFiltroBusqueda = this.handleChangeFiltroBusqueda.bind(this)
     this.handleSearchProductInventory = this.handleSearchProductInventory.bind(this);
     this.handleChangeOfContactValue = this.handleChangeOfContactValue.bind(this);
-}
+  }
+
+  handleChangeFiltroBusqueda(event){
+    this.setState({filtroBusqueda: event.target.value});
+  }
 
   handleChangeOfContactValue(event){
-    this.setState({inputValue: event.target.value});
+    this.setState({inputContactId: event.target.value});
   }
 
   handleSearchProductInventory() {
 
-    fetch('/contact/' + this.state.inputValue)
+    fetch('/contact/' + this.state.inputContactId)
     //fetch('http://jsonplaceholder.typicode.com/users')
     .then(res => res.json())
     .then(data => this.setState({ inventoryProducts: data }))
     .catch(function(error) { console.log('Hubo un error. Por favor, enviar el codigo al administrador\n'+error) })
 
   }
+  /*
+  isSearchButtonEnabled(){
+    return this.state.inputContactId !== null && this.state.filtroBusqueda !== null;
+  }
+  */
 
   //Pinta la pantalla
   render() {
@@ -45,7 +57,7 @@ class App extends Component {
 
             <div className="logo">
               <label> telefonica 3.0 </label>
-              <span>  || gestion simplificada de operaciones</span>
+              <span>  || CRM Express </span>
             </div>
 
             <div className="menu">
@@ -71,7 +83,7 @@ class App extends Component {
               <div class="col-5">
                 <label for="filtro">Elija el filtro de busqueda <span>*</span> </label>
                 <div class="desplegable">
-                  <select name="filtro" class="form-control" required>
+                  <select name="filtro" class="form-control">
                     <option disabled="disabled" selected="selected">Elija una opcion</option>
                     <option value="1">Nro contacto</option>
                   </select>
@@ -80,7 +92,7 @@ class App extends Component {
 
               <div class="col-5">
                 <label for="valor">Valor <span>*</span></label>
-                <input type="text" value={this.state.inputValue} onChange={this.handleChangeOfContactValue} class="form-control" required />
+                <input type="text" onChange={this.handleChangeOfContactValue} class="form-control"/>
               </div>
 
               <div class="col-2 mb-3">
