@@ -3,11 +3,24 @@
  * Copyright 2013-2019 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-scrolling-nav/blob/master/LICENSE)
  */
-header {
-  padding: 156px 0 100px;
-}
+
 
 section {padding: 120px 0;}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
 #suscripciones {height: 150px; overflow-y: auto;}
 
@@ -24,5 +37,35 @@ section {padding: 120px 0;}
 h2.centered_title{ text-align:center;}
 p.centered_text{ padding:10px 20px;}
 
+.bg-header {
+    background-color: #1A8EAD!important;
+    padding: 120px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    }
+
+.bg-about {
+    background-color: #FFFFFF!important;
+    padding: 100px;
+    margin-top: 20px;
+    width: 80%;
+    }
+
+.footer {
+    background-color: #002D44!important;
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
 
 
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.bg-dark {
+    background-color: #002D44!important;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //Importamos la navegacion
-import './CSS/index.css';
+import './css/index.css';
 import App from './App';
 //Aplicacion funcionando sin conexion a Internet
 //Permite que los cambios se persistan al recuperarse
